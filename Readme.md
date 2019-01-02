@@ -9,7 +9,7 @@
 
 ### SAMPLE COMMANDS TO RUN ON K8S
 
-
+```
 build:
 	docker build -t my-web-server .
 run:
@@ -30,6 +30,6 @@ knodeport:
 	kubectl expose deployment $(SERVER_NAME)-gke --target-port=8080 --type=NodePort     
 kapply:
 	kubectl apply -f basic-ingress.yaml	           
-	    
+```	    
 
 

@@ -1,13 +1,10 @@
-### Example Make file for Kubernetes and Docker 
-
 ## Connect to pod 
 ```kubectl  exec -it my-cb-web-server-gke-85bf8b9b58-5rfm2 /bin/bash```
 ## Connect to docker container 
 ```docker exec -i -t 110bdf16efb5 /bin/bash```
 
 
-
-### SAMPLE MAKE FILE WITH COMMANDS TO RUN ON K8S
+### Example Make file for K8s and Docker 
 
 ```
 DEVSHELL_PROJECT_ID=conecktor

@@ -5,10 +5,7 @@
 ## Connect to docker container 
 ```docker exec -i -t 110bdf16efb5 /bin/bash```
 
-## Setup GCP Project ID 
-DEVSHELL_PROJECT_ID=conecktor
-## Service Name to Deploy 
-SERVER_NAME=my-cb-web-server
+
 
 ### SAMPLE COMMANDS TO RUN ON K8S
 

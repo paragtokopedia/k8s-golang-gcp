@@ -1,12 +1,17 @@
-###Example Make file for Kubernetes and Docker 
+### Example Make file for Kubernetes and Docker 
 
-Connect to pod 
-#docker exec -i -t 110bdf16efb5 /bin/bash
-#kubectl  exec -it my-cb-web-server-gke-85bf8b9b58-5rfm2 /bin/bash
+## Connect to pod 
+```kubectl  exec -it my-cb-web-server-gke-85bf8b9b58-5rfm2 /bin/bash```
+## Connect to docker container 
+```docker exec -i -t 110bdf16efb5 /bin/bash```
 
-
+## Setup GCP Project ID 
 DEVSHELL_PROJECT_ID=conecktor
+## Service Name to Deploy 
 SERVER_NAME=my-cb-web-server
+
+### SAMPLE COMMANDS TO RUN ON K8S
+
 
 build:
 	docker build -t my-web-server .

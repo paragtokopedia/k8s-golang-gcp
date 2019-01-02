@@ -7,9 +7,13 @@
 
 
 
-### SAMPLE COMMANDS TO RUN ON K8S
+### SAMPLE MAKE FILE WITH COMMANDS TO RUN ON K8S
 
 ```
+DEVSHELL_PROJECT_ID=conecktor
+SERVER_NAME=my-cb-web-server
+
+deploy: cbuild kdeploy knodeport kapply
 build:
 	docker build -t my-web-server .
 run:
@@ -30,6 +34,10 @@ knodeport:
 	kubectl expose deployment $(SERVER_NAME)-gke --target-port=8080 --type=NodePort     
 kapply:
 	kubectl apply -f basic-ingress.yaml	           
+cleanup: 
+	kubectl delete ingress basic-ingress1
+	kubectl delete service $(SERVER_NAME)-gke
+	kubectl delete deployment $(SERVER_NAME)-gke	           
 ```	    
 
 

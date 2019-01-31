@@ -18,8 +18,8 @@ func handler(w http.ResponseWriter, r *http.Request) {
 }
 
 func main() {
-    log.Println("Starting Server at 8080 ")
+    log.Println("Starting Server at 80 ")
 	r := mux.NewRouter()
 	r.HandleFunc("/", handler)
-    log.Fatal(http.ListenAndServe("0.0.0.0:8080", r))
+    log.Fatal(http.ListenAndServe("0.0.0.0:80", r))
 }

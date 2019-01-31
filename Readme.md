@@ -14,7 +14,7 @@ deploy: cbuild kdeploy knodeport kapply
 build:
 	docker build -t my-web-server .
 run:
-	docker run -d -p 8080:8080 my-web-server
+	docker run -d -p 80:8080 my-web-server
 cbuild:
 	gcloud builds submit -t gcr.io/$(DEVSHELL_PROJECT_ID)/my-cb-web-server 
 cpush:
@@ -38,3 +38,8 @@ cleanup:
 ```	    
 
 
+
+
+kubectl --namespace=production apply -f k8s/production
+
+kubectl apply -f k8s/services

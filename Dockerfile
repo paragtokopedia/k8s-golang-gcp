@@ -5,8 +5,8 @@ ADD . $GOPATH/src/app/
 WORKDIR $GOPATH/src/app
 RUN curl https://raw.githubusercontent.com/golang/dep/master/install.sh | sh 
 RUN dep ensure -v
-RUN go build -o main . 
+RUN go install -v
 
-EXPOSE 8080
+EXPOSE 80
 
-CMD ./main
+CMD ["app"]

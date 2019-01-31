@@ -1,15 +1,15 @@
 #docker exec -i -t 110bdf16efb5 /bin/bash
 
 DEVSHELL_PROJECT_ID=conecktor
-SERVER_NAME=my-cb-web-server
+SERVER_NAME=test
 
 deploy: cbuild kdeploy knodeport kapply
 build:
 	docker build -t my-web-server .
 run:
-	docker run -d -p 8080:8080 my-web-server
+	docker run -d -p 8080:80 my-web-server
 cbuild:
-	gcloud builds submit -t gcr.io/$(DEVSHELL_PROJECT_ID)/my-cb-web-server 
+	gcloud builds submit -t gcr.io/$(DEVSHELL_PROJECT_ID)/$(SERVER_NAME) 
 cpush:
 	docker tag my-web-server gcr.io/$(DEVSHELL_PROJECT_ID)/$(SERVER_NAME)
 	docker images
